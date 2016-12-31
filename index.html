@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script type="text/javascript" src="lib/jquery/1.11.0/jquery_1.11.0.min.js"></script>
+        <script type="text/javascript" src="lib/fabric/1.7.0/fabric.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css"></link>
+    </head>
+    <body>
+        <div class="main height-100 width-100">
+            <div class="main-div border-full width-100 height-90 padding-5"> </div>
+            <div class="controls-div border-full width-100 height-10 padding-5">
+                <div class="controls-div-inner">
+                    <div class="controls-tool display-inline-block">
+                        <a href="javascript:;"><img src="images/plus-circle-outline.png" /></a>
+                        <a href="javascript:;"><img src="images/minus-circle-outline.png" /></a>
+                        <a href="javascript:;"><img src="images/fullscreen.png" /></a>
+                        <a href="javascript:;"><img src="images/fullscreen-exit.png" /></a>
+                        <a href="javascript:;"><img src="images/download.png" /></a>
+                        <a href="javascript:;"><img src="images/settings.png" /></a>
+                    </div>
+                    <div class="controls-pagination display-inline-block">
+                        <a href="javascript:;" class="prev"><img src="images/skip-previous-circle-outline.png" /></a>
+                        <input type="text" class="viewer-current" value="1">
+                        <div class="display-inline-block pagination-text">of <span class="pagination-number">1</span></div>
+                        <a href="javascript:;" class="next"><img src="images/skip-next-circle-outline.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="lib/viewer/1.0.0/viewer.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var data = [
+                    {
+                        'name': 'Sample Video',
+                        'url': 'http://www.w3schools.com/html/mov_bbb.mp4'
+                    },
+                    {
+                        'name': 'Sample PDF',
+                        'url': 'viewer_doc/sample.pdf'
+                    },
+                    {
+                        'name': 'image one',
+                        'url': 'viewer_doc/1.jpg'
+                    },
+                    {
+                        'name': 'image two',
+                        'url': 'viewer_doc/2.jpg'
+                    },
+                    
+                    {
+                        'name': 'image three',
+                        'url': 'viewer_doc/3.jpg'
+                    },
+                    {
+                        'url': 'viewer_doc/4.jpg'
+                    },
+                    {
+                        'name': 'image five',
+                        'url': 'viewer_doc/5.jpg'
+                    }
+                ];
+
+                var v = new viewer({
+                    "parentElement": ".main-div",
+                    "maxWidth": 2000,
+                    "maxHeight": 2000,
+                    "videoControl": true,
+                    "data" : data,
+                    "callback": function(res) {
+                        console.log(res)
+                    }
+                });
+            })
+        </script>
+    </body>
+</html>
