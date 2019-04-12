@@ -9,7 +9,7 @@ import FullScreenExit from './assets/fullscreen-exit.png';
 import Next from './assets/skip-next-circle-outline.png';
 import Prev from './assets/skip-previous-circle-outline.png';
 
-export default class Viewer extends React.Component {
+class Viewer extends React.Component {
     constructor(...props) {
         super(...props);
     }
@@ -18,6 +18,7 @@ export default class Viewer extends React.Component {
     }
 
     renderActions() {
+        console.log('this.props.options',this.props.options)
         return (
             <div className="controls-div border-full width-100 height-10">
                 <div className="controls-div-inner">
@@ -49,7 +50,13 @@ export default class Viewer extends React.Component {
 }
 
 Viewer.propTypes = {
-}
+    options: PropTypes.object
+};
 
 Viewer.defaultProps = {
-}
+    options: {
+        ...CONSTANT.DEFAULT_OPTIONS
+    }
+};
+
+export default Viewer;

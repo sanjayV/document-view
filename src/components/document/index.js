@@ -12,6 +12,10 @@ export default class Document extends React.Component {
     componentDidMount() {
         const documentViewObj = new DocumentView({
             containerId: 'document-viewer',
+            data: CONSTANT.DOCUMENT_DATA,
+            maxWidth: CONSTANT.MAX_WIDTH,
+            maxHeight: CONSTANT.MAX_HEIGHT,
+            videoControl: CONSTANT.VIDEO_CONTROL,
             onComplete: this.documentViewerCallback
         });
     }
