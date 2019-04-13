@@ -4,8 +4,15 @@ import { CONSTANT } from './constants/index'
 import Viewer from './components/Viewer';
 
 class DocumentView {
+    options = {};
+
     constructor(opts) {
         this.child = React.createRef();
+        this.options = {
+            ...CONSTANT.DEFAULT_OPTIONS,
+            ...opts
+        };
+
         this.renderTemplate();
     }
 
