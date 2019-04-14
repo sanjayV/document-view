@@ -1,3 +1,8 @@
 .document-viewer-demo {
     width: 100%;
 }
+
+#document-viewer {
+    width: 1200px;
+    height: 600px;
+}
