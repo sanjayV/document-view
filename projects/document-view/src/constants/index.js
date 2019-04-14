@@ -16,5 +16,10 @@ export const CONSTANT = {
     IMAGE_TYPE: 'image',
     DOC_TYPE: 'doc',
     VIDEO_TYPE: 'video',
-    ERROR_TYPE: 'error'
+    ERROR_TYPE: 'error',
+    EVENTS: {
+        NEXT: 'next',
+        PREV: 'prev',
+        ENTER: 'enter'
+    }
 };

@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { CONSTANT } from './../../constants/index';
 import DataService from './../../services/index';
 import ImageViewer from './../ImageViewer/index';
+import Pagination from './../Pagination/index';
 import './style.css'
 import PlusCircle from './assets/plus-circle-outline.png';
 import MinusCircle from './assets/minus-circle-outline.png';
 import FullScreen from './assets/fullscreen.png';
 import FullScreenExit from './assets/fullscreen-exit.png';
-import Next from './assets/skip-next-circle-outline.png';
-import Prev from './assets/skip-previous-circle-outline.png';
+/* import Next from './assets/skip-next-circle-outline.png';
+import Prev from './assets/skip-previous-circle-outline.png'; */
 
 class Viewer extends React.Component {
     constructor(...props) {
@@ -63,12 +64,13 @@ class Viewer extends React.Component {
                         <a title="Full Screen" href="javascript:;" className="full"><img src={FullScreen} /></a>
                         <a title="Fit Screen" href="javascript:;" className="fit"><img src={FullScreenExit} /></a>
                     </div>
-                    <div className="controls-pagination display-inline-block">
+                    {/* <div className="controls-pagination display-inline-block">
                         <a href="javascript:;" className="prev"><img src={Prev} /></a>
                         <input type="text" className="viewer-current" value="1" />
                         <div className="display-inline-block pagination-text">of <span className="pagination-number">1</span></div>
                         <a href="javascript:;" className="next"><img src={Next} /></a>
-                    </div>
+                    </div> */}
+                    <Pagination total={this.props.options.data.length || 0} callback={this.handelData} />
                 </div>
             </div>
         );
@@ -101,7 +103,11 @@ class Viewer extends React.Component {
 }
 
 Viewer.propTypes = {
-    options: PropTypes.object
+    options: PropTypes.shape({
+        containerId: PropTypes.string,
+        data: PropTypes.array,
+        onComplete: PropTypes.func
+    })
 };
 
 Viewer.defaultProps = {
