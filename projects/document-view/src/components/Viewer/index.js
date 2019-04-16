@@ -32,7 +32,6 @@ class Viewer extends React.Component {
     }
 
     componentDidMount() {
-        this.handelData(0);
     }
 
     handelData(currentIndex = 0) {
@@ -54,7 +53,6 @@ class Viewer extends React.Component {
     }
 
     renderActions() {
-        console.log('this.props.options', this.props.options)
         return (
             <div className="controls-div border-full width-100 height-10">
                 <div className="controls-div-inner">
@@ -64,12 +62,6 @@ class Viewer extends React.Component {
                         <a title="Full Screen" href="javascript:;" className="full"><img src={FullScreen} /></a>
                         <a title="Fit Screen" href="javascript:;" className="fit"><img src={FullScreenExit} /></a>
                     </div>
-                    {/* <div className="controls-pagination display-inline-block">
-                        <a href="javascript:;" className="prev"><img src={Prev} /></a>
-                        <input type="text" className="viewer-current" value="1" />
-                        <div className="display-inline-block pagination-text">of <span className="pagination-number">1</span></div>
-                        <a href="javascript:;" className="next"><img src={Next} /></a>
-                    </div> */}
                     <Pagination total={this.props.options.data.length || 0} callback={this.handelData} />
                 </div>
             </div>

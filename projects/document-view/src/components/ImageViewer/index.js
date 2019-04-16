@@ -31,8 +31,8 @@ class ImageViewer extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps && nextProps.data.url && nextProps.data.url !== this.props.data.url) {
-            this.setImage(this.props.data.url);
+        if (nextProps && nextProps.data.url) {
+            this.setImage(nextProps.data.url);
         } else {
             this.props.callback({ 'error': 'Invalid data provided' });
         }
@@ -71,6 +71,7 @@ class ImageViewer extends React.Component {
             yStart = 0;
         }
 
+        this.canvasRef.current.getContext("2d").clearRect(0, 0, styles.canvas.width, styles.canvas.height);
         this.canvasRef.current.getContext("2d").drawImage(imageObj, xStart, yStart, renderableWidth, renderableHeight);
     }
 

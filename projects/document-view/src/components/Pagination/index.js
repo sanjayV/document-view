@@ -16,14 +16,14 @@ class Pagination extends React.Component {
     }
 
     componentDidMount() {
-        //
+        this.props.callback(this.state.current);
     }
 
     actionHandler(event, enterVal = 0) {
         let current;
-        if (event === CONSTANT.EVENTS.NEXT && this.state.current + 1 <= this.props.total) {
+        if (event === CONSTANT.EVENTS.NEXT && this.state.current + 1 < this.props.total) {
             current = this.state.current + 1;
-        } else if (event === CONSTANT.EVENTS.PREV && this.state.current - 1 > 0) {
+        } else if (event === CONSTANT.EVENTS.PREV && this.state.current - 1 >= 0) {
             current = this.state.current - 1;
         } else if (event === CONSTANT.EVENTS.PREV && enterVal && parseInt(enterVal) > 0 && parseInt(enterVal) <= this.props.total) {
             current = parseInt(enterVal);
@@ -43,7 +43,7 @@ class Pagination extends React.Component {
         return (
             <div className="controls-pagination display-inline-block">
                 <a href="javascript:;" className="prev" onClick={() => this.actionHandler(CONSTANT.EVENTS.PREV)}><img src={Prev} /></a>
-                <input type="text" className="viewer-current" value={this.state.current} />
+                <input type="text" className="viewer-current" value={this.state.current + 1} />
                 <div className="display-inline-block pagination-text">of <span className="pagination-number">{this.props.total}</span></div>
                 <a href="javascript:;" className="next" onClick={() => this.actionHandler(CONSTANT.EVENTS.NEXT)}><img src={Next} /></a>
             </div>
