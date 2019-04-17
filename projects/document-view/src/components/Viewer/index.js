@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { CONSTANT } from './../../constants/index';
 import DataService from './../../services/index';
 import ImageViewer from './../ImageViewer/index';
+import VideoViewer from './../VideoViewer/index';
 import Pagination from './../Pagination/index';
 import './style.css'
 import PlusCircle from './assets/plus-circle-outline.png';
 import MinusCircle from './assets/minus-circle-outline.png';
 import FullScreen from './assets/fullscreen.png';
 import FullScreenExit from './assets/fullscreen-exit.png';
-/* import Next from './assets/skip-next-circle-outline.png';
-import Prev from './assets/skip-previous-circle-outline.png'; */
 
 class Viewer extends React.Component {
     constructor(...props) {
@@ -76,6 +75,10 @@ class Viewer extends React.Component {
         if (this.state.currentType === CONSTANT.IMAGE_TYPE) {
             return (
                 <ImageViewer data={this.state.currentObj} viewdiv={this.viewerDivRef} callback={this.errorHandler} />
+            );
+        } else if (this.state.currentType === CONSTANT.VIDEO_TYPE) {
+            return (
+                <VideoViewer data={this.state.currentObj} viewdiv={this.viewerDivRef} controls={true} callback={this.errorHandler} />
             );
         }
 
