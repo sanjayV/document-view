@@ -10,8 +10,20 @@ export const CONSTANT = {
             'url': 'http://www.w3schools.com/html/mov_bbb.mp4'
         },
         {
-            'name': 'Sample PDF',
+            'name': 'Sample Document',
             'url': 'https://docs.google.com/document/d/e/2PACX-1vT2Mr7GHWI9Pw2nFaZ9Y2fACXPSd9_gZPgoeyQ9cXxXrjk-dn3rQ6rQ2f0OLcOb9Nm2NbKX1tFBl-Lq/pub?embedded=true'
+        },
+        {
+            'name': 'Sample Sheet',
+            'url': 'https://docs.google.com/a/ranosys.com/spreadsheets/d/e/2PACX-1vSaDkyzsw1Q3q6EpWJ9Wmjdcj1u-7vbfZNNQ9H8eZwwuznGsSPQpeFC3-WogkKQ_rKMklCLYQ1XWQIB/pubhtml?widget=true&amp;headers=false'
+        },
+        {
+            'name': 'Sample PPT',
+            'url': 'https://docs.google.com/a/ranosys.com/presentation/d/e/2PACX-1vT-Ef6zpi3IGAC9l3SonYp0r_V4HsRjtRFvAgI9o5_5c8aaOjkvVkKyuBL5HFYkEg6H9HfmtjDCzTbw/embed?start=false&loop=false&delayms=5000'
+        },
+        {
+            'name': 'Sample PDF',
+            'url': 'https://www.alejandrodelasota.org/wp-content/uploads/2013/03/demoform1.pdf'
         },
         {
             'name': 'image two',

@@ -4,6 +4,7 @@ import { CONSTANT } from './../../constants/index';
 import DataService from './../../services/index';
 import ImageViewer from './../ImageViewer/index';
 import VideoViewer from './../VideoViewer/index';
+import DocViewer from './../DocViewer/index';
 import Pagination from './../Pagination/index';
 import './style.css'
 import PlusCircle from './assets/plus-circle-outline.png';
@@ -79,6 +80,10 @@ class Viewer extends React.Component {
         } else if (this.state.currentType === CONSTANT.VIDEO_TYPE) {
             return (
                 <VideoViewer data={this.state.currentObj} viewdiv={this.viewerDivRef} controls={true} callback={this.errorHandler} />
+            );
+        } else if (this.state.currentType === CONSTANT.DOC_TYPE) {
+            return (
+                <DocViewer data={this.state.currentObj} viewdiv={this.viewerDivRef} callback={this.errorHandler} />
             );
         }
 
